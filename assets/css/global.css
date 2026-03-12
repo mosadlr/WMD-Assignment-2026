@@ -1,0 +1,107 @@
+/* Importing CSS files for performance & visual appeal */
+@import url(./componenets.css);
+@import url(./pages/index.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--experimental-yellow);
+  color: var(--primary-black);
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 18px;
+  z-index: 1;
+}
+
+/* ========== HEADER PROPERTIES ========== */
+header {
+  padding: 18px 24px;
+  background: var(--primary-black);
+  color: var(--primary-white);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > nav > a {
+  margin: 0 6px;
+}
+
+header > .group > a > img {
+  max-height: 20px;
+  transition: var(--ui-anim);
+}
+header > .group > a.cart-btn > img {
+  scale: 1.2;
+}
+header > .group > a.hamburger {
+  display: none;
+}
+
+/* Navigation Overlay */
+.mobileNav {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: var(--secondary-black);
+  overflow-x: hidden;
+  transition: var(--ui-anim);
+}
+
+.mobileNav-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mobileNav a {
+  padding: 12px;
+  color: var(--secondary-white);
+  text-decoration: none;
+  font-size: 36px;
+  display: block;
+  transition: var(--ui-anim);
+}
+.mobileNav a:hover,
+.mobileNav a:focus {
+  color: var(--primary-purple);
+  scale: 1.2;
+}
+
+.mobileNav .closebtn {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 60px;
+}
+.mobileNav .closebtn:hover {
+  scale: 1.2;
+}
+
+/* ========== MOBILE COMPATIBILITY ========== */
+@media screen and (max-width: 480px) {
+  /* Hide Native Navigation Icons on Mobile & Spacing For Cart Icon */
+  header > nav {
+    display: none;
+  }
+  header > .group > a.cart-btn {
+    display: none;
+  }
+  header > .group > a.hamburger {
+    display: flex;
+  }
+}

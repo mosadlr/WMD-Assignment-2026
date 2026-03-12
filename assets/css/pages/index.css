@@ -1,0 +1,38 @@
+/* ========== HERO SECTION PROPERTIES ========== */
+#hero {
+  height: 60vh;
+  background: url(../../media/images/00101.webp);
+  color: var(--primary-white);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+}
+
+#hero > .contents {
+  width: 60%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ========== ABOUT SECTION PROPERTIES ========== */
+#about {
+  background: var(--primary-black);
+  color: var(--primary-white);
+}
+
+#about .grid {
+  margin-top: 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ========== CATALOGUE SECTION PROPERTIES ========== */
+#catalogue {
+  background: var(--primary-white);
+  color: var(--primary-black);
+}
+
+#catalogue .grid {
+  margin-top: 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
