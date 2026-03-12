@@ -2,6 +2,11 @@
 @import url(./componenets.css);
 @import url(./pages/index.css);
 
+@font-face {
+  font-family: Questrial;
+  src: url(../fonts/Questrial-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,9 +19,9 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background: var(--experimental-yellow);
+  background: var(--secondary-white);
   color: var(--primary-black);
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: Questrial, "Times New Roman", serif;
   font-size: 18px;
   z-index: 1;
 }
@@ -24,9 +29,8 @@ body {
 /* ========== HEADER PROPERTIES ========== */
 header {
   padding: 18px 24px;
-  background: var(--primary-black);
-  color: var(--primary-white);
-  font-weight: 600;
+  background: var(--primary-white);
+  color: var(--primary-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,6 +49,47 @@ header > .group > a.cart-btn > img {
 }
 header > .group > a.hamburger {
   display: none;
+}
+
+/* Navigation Drop Down Links */
+.dropbtn,
+header > .container > a {
+  padding: 18px 6px;
+}
+header > .container > a > img {
+  margin-left: -6px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  min-width: 120px;
+  background: var(--primary-white);
+  color: var(--primary-black);
+  position: absolute;
+  top: 36px;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  border: 2px solid var(--primary-black);
+  transition: var(--ui-anim);
+}
+.dropdown-content a:hover {
+  background: var(--primary-black);
+  color: var(--primary-white);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Navigation Overlay */
@@ -78,7 +123,7 @@ header > .group > a.hamburger {
 }
 .mobileNav a:hover,
 .mobileNav a:focus {
-  color: var(--primary-purple);
+  color: var(--primary-red);
   scale: 1.2;
 }
 
@@ -90,6 +135,23 @@ header > .group > a.hamburger {
 }
 .mobileNav .closebtn:hover {
   scale: 1.2;
+}
+
+/* ========== FOOTER PROPERTIES ========== */
+footer {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+footer > .container,
+footer > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+footer > .container > a {
+  margin: 6px 0;
 }
 
 /* ========== MOBILE COMPATIBILITY ========== */
